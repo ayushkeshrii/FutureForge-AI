@@ -43,6 +43,14 @@ app.use("/api/interview", interviewRoutes);
 app.use("/api/roadmap", roadmapRoutes);
 app.use("/api/mentor", mentorRoutes);
 app.use("/api/test", testRoutes);
-const PORT = process.env.PORT || 5000; app.listen(PORT, () => {
+const PORT = process.env.PORT || 5000;
+
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "OK",
+        message: "FutureForge backend is running"
+    });
+});
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on ${PORT}`);
 });

@@ -1,0 +1,21 @@
+services:
+
+  backend:
+    build:
+      context: ./backend_AI
+    container_name: futureforge-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend_AI/.env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./Frontend_AI
+    container_name: futureforge-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -124,18 +124,17 @@ function ResumeAnalysis() {
                     {!showResult && (
                         <div className="space-y-10 animate-fade-in-up">
 
-                            {/* Upload Trigger Area */}
                             <ResumeUpload onFileSelect={handleFileSelect} />
 
-                            {/* Stepped AI Loading UI */}
+                         
                             {loading && (
                                 <div className="mt-10 max-w-2xl mx-auto bg-slate-900/60 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 shadow-2xl relative text-center animate-fade-in">
-                                    {/* Glowing accent lights */}
+                                 
                                     <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full filter blur-[50px] pointer-events-none"></div>
                                     <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full filter blur-[50px] pointer-events-none"></div>
                                     
                                     <div className="flex flex-col items-center justify-center space-y-6">
-                                        {/* Spinning pulsing AI loader */}
+                                      
                                         <div className="relative w-20 h-20">
                                             <div className="absolute inset-0 border-4 border-purple-500/20 rounded-full"></div>
                                             <div className="absolute inset-0 border-4 border-t-transparent border-purple-500 rounded-full animate-spin"></div>
