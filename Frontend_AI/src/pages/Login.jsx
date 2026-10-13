@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaLock, FaSignInAlt, FaCircleNotch, FaArrowLeft } from "react-icons/fa";
 import { loginUser } from "../services/authService";
+import GoogleAuthButton from "../components/GoogleAuthButton";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -148,6 +149,18 @@ function Login() {
                             )}
                         </button>
                     </form>
+
+                    {/* Divider */}
+                    <div className="relative flex py-4 items-center">
+                        <div className="flex-grow border-t border-slate-800"></div>
+                        <span className="flex-shrink mx-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                            Or continue with
+                        </span>
+                        <div className="flex-grow border-t border-slate-800"></div>
+                    </div>
+
+                    {/* Google OAuth Button */}
+                    <GoogleAuthButton onError={setError} mode="signin" />
 
                     {/* Footer Sign Up Link */}
                     <div className="mt-8 text-center text-sm text-slate-450 translate-z-10">

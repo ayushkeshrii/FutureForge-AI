@@ -16,7 +16,19 @@ const userSchema =
 
             password: {
                 type: String,
-                required: true,
+                required: function () {
+                    return !this.googleId;
+                },
+            },
+
+            googleId: {
+                type: String,
+                default: null,
+            },
+
+            avatar: {
+                type: String,
+                default: "",
             },
 
             role: {
